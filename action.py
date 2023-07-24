@@ -7,7 +7,7 @@ from pprint import pprint
 
 
 # 用您自己的 GitHub Token 初始化 Github 对象
-github_token = "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"
+github_token = sys.argv[2]
 
 
 
