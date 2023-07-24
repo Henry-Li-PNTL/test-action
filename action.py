@@ -38,7 +38,7 @@ r = requests.get(
 
 print(f"Merge {r.json()['head']['ref']} to {r.json()['base']['ref']}")
 
-exit()
+# exit()
 
 
 
