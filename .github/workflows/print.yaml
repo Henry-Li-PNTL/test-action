@@ -14,6 +14,5 @@ jobs:
         run: |
           echo "${{ env.ref }}"
           echo "Event name: ${{ github.event_name }}"
-          echo "GITHUB_HEAD_REF: ${{ GITHUB_HEAD_REF }}"
+          echo "GITHUB_HEAD_REF: ${{ github.GITHUB_HEAD_REF }}"
           echo "Github sha: ${ GITHUB_SHA }"
-          
