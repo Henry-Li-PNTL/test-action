@@ -3,6 +3,11 @@ name: Print Me
 on:
   push:
   pull_request:
+    types: 
+      - opened
+      - reopened
+      - closed
+
 
 jobs:
   printme:
@@ -17,14 +22,14 @@ jobs:
           ref: ${{ env.GITHUB_REF_NAME }}
           sha: ${{ github.GITHUB_SHA }}
         run: |
-          echo '${{ env.ref }}' ${{ env.ref }}""
-          echo '$JOB_ENV' $JOB_ENV
-          echo '${GITHUB_REF##*/}' ${GITHUB_REF##*/}
-          echo `$sha`
-          echo "Event name: ${{ github.event_name }}"
-          echo "GITHUB_HEAD_REF: ${{ github.head_ref }}"
-          echo "GITHUB_HEAD_REF: ${{ github.HEAD_REF }}"
-          echo "Github sha: ${{ github.sha }}"
-          echo "GITHUB_REF: ${{ github.GITHUB_REF }}"
+          echo '${{ env.ref }}          : ' ${{ env.ref }}""
+          echo '$JOB_ENV                : ' $JOB_ENV
+          echo '${GITHUB_REF##*/}       : ' ${GITHUB_REF##*/}
+          echo '$sha                    : ' $sha
+          echo '${{ github.event_name }}: ' "${{ github.event_name }}"
+          echo '${{ github.head_ref }}  : ' "${{ github.head_ref }}"
+          echo '${{ github.HEAD_REF }}  : ' "${{ github.HEAD_REF }}"
+          echo '${{ github.sha }}       : ' "${{ github.sha }}"
+          echo '${{ github.GITHUB_REF }}: ' "${{ github.GITHUB_REF }}"
           echo "========================================================================"
           env
