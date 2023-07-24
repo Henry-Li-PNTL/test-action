@@ -1,4 +1,8 @@
 from github import Github
+from github import Github
+
+# Authentication is defined via github.Auth
+from github import Auth
 import sys
 
 raw_branch = sys.argv[1]
@@ -6,7 +10,7 @@ raw_branch = sys.argv[1]
 
 # 用您自己的 GitHub Token 初始化 Github 对象
 github_token = "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"
-g = Github(github_token)
+g = Github(Auth(github_token))
 
 # 您的 GitHub 仓库的所有 Pull Requests
 repo = g.get_repo("Henry-Li-PNTL/test-action")
