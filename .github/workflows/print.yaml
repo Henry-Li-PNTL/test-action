@@ -19,5 +19,5 @@ jobs:
           echo "GITHUB_HEAD_REF: ${{ github.HEAD_REF }}"
           echo "Github sha: ${{ github.sha }}"
           echo "GITHUB_HEAD_REF: ${{ github.GITHUB_REF }}"
-          echo "GITHUB_HEAD_REF: ${{ GITHUB_REF }}"
+          echo "GITHUB_HEAD_REF: ${ GITHUB_REF }"
           env
