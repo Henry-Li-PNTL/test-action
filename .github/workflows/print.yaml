@@ -6,14 +6,15 @@ jobs:
   printme:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      
       - name: yooo print
         env:
           ref: ${{ env.GITHUB_REF_NAME }}
+          sha: ${{ github.GITHUB_SHA }}
         run: |
-          echo ${{ env.ref }}
+          echo $ref
           echo ${GITHUB_REF##*/}
+          echo `$sha`
           echo "Event name: ${{ github.event_name }}"
+          echo "GITHUB_HEAD_REF: ${{ github.head_ref }}"
           echo "GITHUB_HEAD_REF: ${{ github.GITHUB_HEAD_REF }}"
           echo "Github sha: ${{ github.GITHUB_SHA }}"
