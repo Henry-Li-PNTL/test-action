@@ -1,0 +1,15 @@
+name: Print Me
+
+on: push
+
+jobs:
+  printme:
+    runs-on: ubuntu
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: yooo print
+        env:
+          ref: ${{ env.GITHUB_REF_NAME }}
+        run: |
+          echo "$ref"
