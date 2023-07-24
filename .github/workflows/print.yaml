@@ -25,6 +25,7 @@ jobs:
           echo '{{ env.ref }}           : ' ${{ env.ref }}""
           echo '$JOB_ENV                : ' $JOB_ENV
           echo '$\{GITHUB_REF##*/}      : ' ${GITHUB_REF##*/}
+          echo '$\{GITHUB_REF}          : ' ${GITHUB_REF}
           echo '$sha                    : ' $sha
           echo '{{ github.event_name }} : ' ${{ github.event_name }}
           echo '{{ github.head_ref }}   : ' ${{ github.head_ref }}
