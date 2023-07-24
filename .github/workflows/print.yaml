@@ -25,6 +25,7 @@ jobs:
           echo '{{ env.ref }}           : ' ${{ env.ref }}""
           echo '$JOB_ENV                : ' $JOB_ENV
           echo '$\{GITHUB_REF##*/}      : ' ${GITHUB_REF##*/}
+          echo '$\{GITHUB_REF}          : ' ${GITHUB_REF}
           echo '$sha                    : ' $sha
           echo '{{ github.event_name }} : ' ${{ github.event_name }}
           echo '{{ github.head_ref }}   : ' ${{ github.head_ref }}
@@ -33,3 +34,29 @@ jobs:
           echo '{{ github.GITHUB_REF }} : ' ${{ github.GITHUB_REF }}
           echo "========================================================================"
           env
+
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install PyGithub
+      
+      - name: Python print
+        run: |
+          python action.py "${GITHUB_REF}" ${{ secrets.SuperSecret }}
+
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo The PR was merged
