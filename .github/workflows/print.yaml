@@ -22,7 +22,7 @@ jobs:
           ref: ${{ env.GITHUB_REF_NAME }}
           sha: ${{ github.GITHUB_SHA }}
         run: |
-          echo '${{ env.ref }}          : ' ${{ env.ref }}""
+          echo '{{ env.ref }}           : ' ${{ env.ref }}""
           echo '$JOB_ENV                : ' $JOB_ENV
           echo '$\{GITHUB_REF##*/}      : ' ${GITHUB_REF##*/}
           echo '$sha                    : ' $sha
