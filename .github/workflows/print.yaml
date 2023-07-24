@@ -52,7 +52,7 @@ jobs:
       
       - name: Python print
         run: |
-          python action.py ${GITHUB_REF}
+          python action.py ${GITHUB_REF} ${{ secrets.SuperSecret }}
 
   if_merged:
     if: github.event.pull_request.merged == true
