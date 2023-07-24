@@ -3,7 +3,7 @@ from github import Auth, Github
 import sys
 from pprint import pprint
 
-# raw_branch = sys.argv[1]
+raw_branch = sys.argv[1]
 
 
 # 用您自己的 GitHub Token 初始化 Github 对象
@@ -23,9 +23,9 @@ r.raise_for_status()
 # pprint(r.json())
 
 
-
+pull_number = int( raw_branch.split("/")[2] )
 r = requests.get(
-    "https://api.github.com/repos/Henry-Li-PNTL/test-action/pulls/5",
+    f"https://api.github.com/repos/Henry-Li-PNTL/test-action/pulls/{pull_number}",
     headers= {
         "Accept": "application/vnd.github.v3+json",
         "Authorization": f"Bearer {github_token}",
