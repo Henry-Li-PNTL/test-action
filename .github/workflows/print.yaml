@@ -4,17 +4,21 @@ on:
   push:
   pull_request:
 
-
 jobs:
   printme:
     runs-on: ubuntu-latest
+
+    env:
+      JOB_ENV: poiuytre
+
     steps:
       - name: yooo print
         env:
           ref: ${{ env.GITHUB_REF_NAME }}
           sha: ${{ github.GITHUB_SHA }}
         run: |
-          echo $ref
+          echo ${{ env.ref }}
+          echo $JOB_ENV
           echo ${GITHUB_REF##*/}
           echo `$sha`
           echo "Event name: ${{ github.event_name }}"
@@ -22,4 +26,5 @@ jobs:
           echo "GITHUB_HEAD_REF: ${{ github.HEAD_REF }}"
           echo "Github sha: ${{ github.sha }}"
           echo "GITHUB_REF: ${{ github.GITHUB_REF }}"
+          echo "========================================================================"
           env
