@@ -4,7 +4,7 @@ on: push
 
 jobs:
   printme:
-    runs-on: ubuntu
+    runs-on: general
     steps:
       - uses: actions/checkout@v3
       
@@ -13,3 +13,8 @@ jobs:
           ref: ${{ env.GITHUB_REF_NAME }}
         run: |
           echo "$ref"
+          echo "head_ref: ${{ github.head_ref }}"
+          echo "Event name: ${{ github.event_name }}"
+          echo "GITHUB_HEAD_REF: ${ GITHUB_HEAD_REF }"
+          echo "Github sha: ${GITHUB_SHA}"
+          
