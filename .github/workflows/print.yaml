@@ -44,7 +44,7 @@ jobs:
 #         with:
 #           github_token: ${{ secrets.NEWTOKEN }}
 #           custom_tag: "XDDD"
-      - name: Create/Update tag
+
         uses: rickstaa/action-create-tag@v1.6.2
         with:
           tag: QQ
