@@ -39,14 +39,10 @@ jobs:
           
       - uses: actions/checkout@v3
       - name: < Auto Tag > 
-        uses: rickstaa/action-create-tag@v1
-        id: "tag_create"
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.1
         with:
-          github_token: ${{ secrets.GTION }}
-          tag: "latest-dev"
-          force_push_tag: true
-          message: "Latest release"
-          
+          github_token: ${{ secrets.NEWTOKEN }}
           
 #         uses: phish108/autotag-action@v1.1.64
 #         with:
