@@ -42,28 +42,28 @@ jobs:
           github-token: ${{ secrets.NEWTOKEN }}
           tag: mavis-1743-dev
 
-  python:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+#   python:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v3
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v4
-        with:
-          python-version: 3.11
+#       - name: Set up Python 3.11
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: 3.11
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install PyGithub
+#       - name: Install dependencies
+#         run: |
+#           python -m pip install --upgrade pip
+#           pip install PyGithub
       
-      - name: Python print
-        run: |
-          python action.py "${GITHUB_REF}" ${{ secrets.newtoken }}
+#       - name: Python print
+#         run: |
+#           python action.py "${GITHUB_REF}" ${{ secrets.newtoken }}
 
-  if_merged:
-    if: github.event.pull_request.merged == true
-    runs-on: ubuntu-latest
-    steps:
-    - run: |
-        echo The PR was merged
+#   if_merged:
+#     if: github.event.pull_request.merged == true
+#     runs-on: ubuntu-latest
+#     steps:
+#     - run: |
+#         echo The PR was merged
