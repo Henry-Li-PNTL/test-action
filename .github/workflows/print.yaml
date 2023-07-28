@@ -36,11 +36,18 @@ jobs:
           echo "========================================================================"
           env
           
+          
+      - uses: actions/checkout@v2
       - name: < Auto Tag > 
-        uses: phish108/autotag-action@v1.1.64
-        with:
-          github-token: ${{ secrets.NEWTOKEN }}
-          tag: mavis-1743-dev
+        run: |
+          git tag latest-dev
+          git push origin latest-dev
+          
+          
+#         uses: phish108/autotag-action@v1.1.64
+#         with:
+#           github-token: ${{ secrets.NEWTOKEN }}
+#           tag: mavis-1743-dev
 
 #   python:
 #     runs-on: ubuntu-latest
