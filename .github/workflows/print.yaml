@@ -42,6 +42,7 @@ jobs:
           github-token: ${{ secrets.NEWTOKEN }}
           with-v: false
           release-branch: mavis-1743-dev
+          tag: mavis-1743-dev
 
   python:
     runs-on: ubuntu-latest
