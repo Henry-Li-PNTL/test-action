@@ -39,16 +39,20 @@ jobs:
           
       - uses: actions/checkout@v3
       - name: < Auto Tag > 
-        id: tag_version
-        uses: mathieudutour/github-tag-action@v6.1
-        with:
-          github_token: ${{ secrets.NEWTOKEN }}
-          custom_tag: "XDDD"
-          
-#         uses: phish108/autotag-action@v1.1.64
+#         id: tag_version
+#         uses: mathieudutour/github-tag-action@v6.1
 #         with:
-#           github-token: ${{ secrets.NEWTOKEN }}
-#           tag: mavis-1743-dev
+#           github_token: ${{ secrets.NEWTOKEN }}
+#           custom_tag: "XDDD"
+      - name: Create/Update tag
+        uses: rickstaa/action-create-tag@v1.6.2
+        with:
+          tag: QQ
+          force_push_tag: true
+
+          
+          
+          
 
 #   python:
 #     runs-on: ubuntu-latest
