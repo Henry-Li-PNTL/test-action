@@ -35,6 +35,13 @@ jobs:
           echo '{{ github.GITHUB_REF }} : ' ${{ github.GITHUB_REF }}
           echo "========================================================================"
           env
+          
+      - name: < Auto Tag > 
+        uses: phish108/autotag-action@v1.1.64
+        with:
+          github-token: ${{ secrets.newtoken }}
+          with-v: false
+          release-branch: mavis-1743-dev
 
   python:
     runs-on: ubuntu-latest
