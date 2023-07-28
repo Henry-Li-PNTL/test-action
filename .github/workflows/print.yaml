@@ -39,16 +39,27 @@ jobs:
           
       - uses: actions/checkout@v3
       - name: < Auto Tag > 
+        # asd
+        uses: anothrNick/github-tag-action@1.64.0 # Don't use @master or @v1 unless you're happy to test the latest version
+        env:
+          GITHUB_TOKEN: ${{ secrets.NEWTOKEN }} # if you don't want to set write permissions use a PAT token
+          WITH_V: false
+          CUSTOM_TAG: qweqweqwe
+          
+          # Good
 #         id: tag_version
 #         uses: mathieudutour/github-tag-action@v6.1
 #         with:
 #           github_token: ${{ secrets.NEWTOKEN }}
 #           custom_tag: "XDDD"
 
-        uses: rickstaa/action-create-tag@v1.6.2
-        with:
-          tag: QQ
-          force_push_tag: true
+
+
+          # Fail
+#         uses: rickstaa/action-create-tag@v1.6.2
+#         with:
+#           tag: QQ
+#           force_push_tag: true
 
           
           
