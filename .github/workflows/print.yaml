@@ -40,8 +40,6 @@ jobs:
         uses: phish108/autotag-action@v1.1.64
         with:
           github-token: ${{ secrets.NEWTOKEN }}
-          with-v: false
-          release-branch: mavis-1743-dev
           tag: mavis-1743-dev
 
   python:
