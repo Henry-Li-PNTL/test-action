@@ -44,7 +44,7 @@ jobs:
 #           tag_name: qweqweqwe #(required) tag name to delete 
 #           github_token: ${{ secrets.NEWTOKEN }} # (required) a GitHub token with write access to the repo that needs to be modified
 
-      - name: < Auto Tag > 
+#       - name: < Auto Tag > 
 #         # good
 #         uses: anothrNick/github-tag-action@1.64.0 # Don't use @master or @v1 unless you're happy to test the latest version
 #         env:
