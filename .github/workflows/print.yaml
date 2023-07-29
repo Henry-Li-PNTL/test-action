@@ -63,11 +63,13 @@ jobs:
 
         # Fail
       - uses: actions/checkout@v3
-      - name: tag
-        uses: rickstaa/action-create-tag@v1.6.2
+      - uses: rickstaa/action-create-tag@v1
+        id: "tag_create"
         with:
+          tag: "latest"
+          tag_exists_error: false
+          message: "Latest release"
           github_token: ${{ secrets.NEWTOKEN }}
-          tag: QQ
           force_push_tag: true
 
           
